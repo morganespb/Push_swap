@@ -24,6 +24,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <stdio.h>
+#include <stdarg.h>
 
 /*_____Our struct_____*/
 typedef struct s_node
@@ -56,4 +57,22 @@ bool	pop(t_stack *stack, int *item);
 bool	push(t_stack *stack, int item);
 bool	peek(t_stack *stack, int *item);
 
+/*Basicly the operation are supposed to be made on 
+ * a stack, and a stack has the LIFO ruls. 
+ * Last element in last element out
+ * so i've created this functions by respecting this rule 
+ * Do you think they're all good ?
+ * Optimisation wise it's not perfect for now (I think)*/
+/*---The operations functions---*/
+bool	swap_a(t_stack *stack_a);
+bool	swap_b(t_stack *stack_b);
+bool  swap_ab(t_stack *stack_a, t_stack *stack_b);
+bool  push_a(t_stack *stack_a, t_stack *stack_b);
+bool  push_b(t_stack *stack_b, t_stack *stack_a);
+bool rotate_a(t_stack *stack_a);
+bool rotate_b(t_stack *stack_b);
+bool rotate_ab(t_stack *stack_a, t_stack *stack_b);
+bool  reverse_rotate_a(t_stack *stack_a);
+bool  reverse_rotate_b(t_stack *stack_b);
+bool  reverse_rotate_ab(t_stack *stack_a, t_stack *stack_b);
 #endif
