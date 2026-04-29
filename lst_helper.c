@@ -3,20 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   lst_helper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: morganesimonprovo <morganesimonprovo@stud  +#+  +:+       +#+        */
+/*   By: mosimon <mosimon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/29 12:00:32 by morganesimonp     #+#    #+#             */
-/*   Updated: 2026/04/29 15:56:49 by morganesimonp    ###   ########.fr       */
+/*   Created: 2026/04/29 12:00:32 by mosimon           #+#    #+#             */
+/*   Updated: 2026/04/29 19:47:42 by mosimon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "push_swap.h"
 
 //list manipulations helpers, def more than 5 functions, but we might be able to reduce that was just a
-//first sketch
+//first sketch. you're more comfortable in lists than me i think feel free to lmk if anything looks weird (:
 
-t_node *new_node(int value)
+t_node	*new_node(int value)
 {
-	t_node *n;
+	t_node	*n;
 
 	n = malloc(sizeof(t_node));
 	if (!n)
@@ -36,7 +37,7 @@ void	add_front(t_node **stack, t_node *new)
 
 void	add_back(t_node **stack, t_node *new)
 {
-	t_node *tmp;
+	t_node	*tmp;
 
 	if (!new)
 		return ;
@@ -51,9 +52,9 @@ void	add_back(t_node **stack, t_node *new)
 	tmp->next = new;
 }
 
-t_node *pop_front(t_node **stack)
+t_node	*pop_front(t_node **stack)
 {
-	t_node *tmp;
+	t_node	*tmp;
 
 	if (!*stack)
 		return (NULL);
@@ -63,7 +64,7 @@ t_node *pop_front(t_node **stack)
 	return (tmp);
 }
 
-t_node *last_node(t_node *stack)
+t_node	*last_node(t_node *stack)
 {
 	if (!stack)
 		return (NULL);
@@ -83,7 +84,7 @@ t_node	*previous(t_node *stack)
 
 int	stack_size(t_node *stack)
 {
-	int count;
+	int	count;
 
 	count = 0;
 	while (stack)
@@ -96,7 +97,7 @@ int	stack_size(t_node *stack)
 
 void	free_stack(t_node *stack)
 {
-	t_node *tmp;
+	t_node	*tmp;
 
 	while (stack)
 	{
@@ -105,5 +106,3 @@ void	free_stack(t_node *stack)
 		free(tmp);
 	}
 }
-
-

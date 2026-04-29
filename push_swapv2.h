@@ -3,21 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   push_swapv2.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: morganesimonprovo <morganesimonprovo@stud  +#+  +:+       +#+        */
+/*   By: mosimon <mosimon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/29 15:14:00 by morganesimonp     #+#    #+#             */
-/*   Updated: 2026/04/29 15:56:39 by morganesimonp    ###   ########.fr       */
+/*   Created: 2026/04/29 15:14:00 by mosimon           #+#    #+#             */
+/*   Updated: 2026/04/29 19:41:10 by mosimon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAPV2_H
 # define PUSH_SWAPV2_H
 
+# include <limits.h>
+# include <unistd.h>
+# include <stdio.h>
+# include "libft.h"
+
 typedef struct s_node
 {
-	int				value;
-	struct s_node	*next
-} t_node;
+	int	value;
+	struct s_node * next
+}	t_node;
 
 t_node	*new_node(int value);
 void	add_front(t_node **stack, t_node *new);
@@ -27,8 +32,9 @@ t_node	*last_node(t_node *stack);
 t_node	*previous(t_node *stack);
 int		stack_size(t_node *stack);
 void	free_stack(t_node *stack);
-void	sa(t_node **stack);//ive added printing in the op_functions to test
-						   //some stuff but we'll need to change that obvio
+void	sa(t_node **stack);
+//ive added printing in the op_functions to test
+//some stuff but we'll need to change that obvio
 void	sb(t_node **b);
 void	ss(t_node **a, t_node **b);
 void	pa(t_node **a, t_node **b);
@@ -38,6 +44,5 @@ void	rrb(t_node **b);
 void	ra(t_node **a);
 void	rb(t_node **a);
 void	rr(t_node **a);
-
 
 #endif
