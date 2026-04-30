@@ -6,11 +6,11 @@
 /*   By: morganesimonprovo <morganesimonprovo@stud  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/29 13:28:40 by morganesimonp     #+#    #+#             */
-/*   Updated: 2026/04/29 15:56:50 by morganesimonp    ###   ########.fr       */
+/*   Updated: 2026/04/29 22:41:55 by morganesimonp    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swapv2.h"
 
 static void	reverse_rotate(t_node **stack)
 {
@@ -22,8 +22,8 @@ static void	reverse_rotate(t_node **stack)
 	prev = previous(*stack);
 	last = prev->next;
 	prev->next = NULL;
-	add_front(last, stack);
-
+	last->next = *stack;
+	*stack = last;
 }
 
 void	rra(t_node **a)

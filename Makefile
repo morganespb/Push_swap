@@ -1,8 +1,8 @@
 NAME= push_swap
 CC= gcc
-CFLAGS= -Wall -Wextra -Werror
+CFLAGS= -Wall -Wextra -Werror -g3 -fsanitize=address
 
-SRCS= push_swap.c
+SRCS= main.c printer.c op_push.c op_swap.c op_rotate.c op_reverse_rotate.c parsing.c lst_helper.c
 
 OBJS= $(SRCS:.c=.o)
 
@@ -20,7 +20,7 @@ $(LIBFT):
 	make -C $(LIBFT_DIR)
 
 %.o: %.c
-	$(CC) $(CFLAGS) $(INCLUDES -c $< -o $@
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 clean:
 	make clean -C $(LIBFT_DIR)

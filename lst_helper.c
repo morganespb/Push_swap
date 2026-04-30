@@ -5,15 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mosimon <mosimon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/29 12:00:32 by mosimon           #+#    #+#             */
-/*   Updated: 2026/04/29 19:47:42 by mosimon          ###   ########.fr       */
+/*   Created: 2026/04/29 19:48:32 by mosimon           #+#    #+#             */
+/*   Updated: 2026/04/29 22:04:32 by morganesimonp    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
-//list manipulations helpers, def more than 5 functions, but we might be able to reduce that was just a
-//first sketch. you're more comfortable in lists than me i think feel free to lmk if anything looks weird (:
+#include "push_swapv2.h"
 
 t_node	*new_node(int value)
 {
@@ -101,8 +98,8 @@ void	free_stack(t_node *stack)
 
 	while (stack)
 	{
-		tmp = stack;
-		stack = stack->next;
-		free(tmp);
+		tmp = stack->next;
+		free(stack);
+		stack = tmp;
 	}
 }

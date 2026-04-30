@@ -6,7 +6,7 @@
 /*   By: mosimon <mosimon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/29 16:39:20 by mosimon           #+#    #+#             */
-/*   Updated: 2026/04/29 19:39:55 by mosimon          ###   ########.fr       */
+/*   Updated: 2026/04/29 22:30:44 by morganesimonp    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static void	print_error(void)
 	write(2, "Error\n", 6);
 }
 
-int	safe_atoi(const char *str, int *out) //not sure of this, tried to make an atoi that check overlow and also returns value but testing needed
+static int	safe_atoi(const char *str, int *out) //not sure of this, tried to make an atoi that check overlow and also returns value but testing needed
 {
 	long	res;
 	int		sign;
@@ -66,20 +66,21 @@ t_node	*parsing(int ac, char **av)
 	t_node	*a;
 	int		v;
 
-	if (ac < 2) //or 3 ? im not sure if we should stop the program if theres only one
+	i = 1;
+	a = NULL;
+	if (ac < 2)
 		return (NULL);
 	while (i < ac)
 	{
-		if!(safe_atoi(av[i], &v) || duplicates(a, v))
+		if (!safe_atoi(av[i], &v) || duplicates(a, v))
 		{
-			print_error * ();
+			//print_error();
 			free_stack(a);
+			print_error();
 			return (NULL);
 		}
 		add_back(&a, new_node(v));
 		i++;
 	}
 	return (a);
-}
-
 }

@@ -6,7 +6,7 @@
 /*   By: mosimon <mosimon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/29 15:14:00 by mosimon           #+#    #+#             */
-/*   Updated: 2026/04/29 19:41:10 by mosimon          ###   ########.fr       */
+/*   Updated: 2026/04/29 21:18:37 by morganesimonp    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@
 # include <limits.h>
 # include <unistd.h>
 # include <stdio.h>
-# include "libft.h"
+# include "libft/libft.h"
 
 typedef struct s_node
 {
 	int	value;
-	struct s_node * next
+	struct s_node * next;
 }	t_node;
 
 t_node	*new_node(int value);
@@ -43,6 +43,8 @@ void	rra(t_node **a);
 void	rrb(t_node **b);
 void	ra(t_node **a);
 void	rb(t_node **a);
-void	rr(t_node **a);
+void	rr(t_node **a, t_node **b);
+void	print_stack(char *name, t_node *s);
+t_node	*parsing(int ac, char **av);
 
 #endif
