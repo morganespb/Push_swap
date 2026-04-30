@@ -6,7 +6,7 @@
 /*   By: mosimon <mosimon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/29 19:48:32 by mosimon           #+#    #+#             */
-/*   Updated: 2026/04/29 22:34:56 by morganesimonp    ###   ########.fr       */
+/*   Updated: 2026/04/30 12:48:22 by mosimon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,14 @@ int	main(int ac, char **av)
 	print_stack("A", a);
 	print_stack("B", b);
 	printf("\n");
-	pb(&a, &b);
+	printf("disorder: %.2f\n\n", compute_disorder(a));
+	pb(&b, &a);
 	print_stack("A", a);
 	print_stack("B", b);
 	printf("\n");	
 	ra(&a);
 	print_stack("A", a);
+	print_stack("B", b);
 	printf("\n");
 	pa(&a, &b);
 	print_stack("A", a);
