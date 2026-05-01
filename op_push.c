@@ -6,7 +6,7 @@
 /*   By: morganesimonprovo <morganesimonprovo@stud  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/29 13:24:36 by morganesimonp     #+#    #+#             */
-/*   Updated: 2026/04/30 12:00:39 by mosimon          ###   ########.fr       */
+/*   Updated: 2026/05/01 14:17:37 by mosimon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swapv2.h"
@@ -27,10 +27,12 @@ void	pa(t_node **a, t_node **b)
 {
 	push(b, a);
 	write(1, "pa\n", 3);
+	op_count++;
 }
 
 void	pb(t_node **a, t_node **b)
 {
 	push(b, a);
 	write(1, "pb\n", 3);
+	op_count++;
 }

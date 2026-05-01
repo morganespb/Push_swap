@@ -6,7 +6,7 @@
 /*   By: mosimon <mosimon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/29 15:14:00 by mosimon           #+#    #+#             */
-/*   Updated: 2026/04/30 12:48:04 by mosimon          ###   ########.fr       */
+/*   Updated: 2026/05/01 14:16:18 by mosimon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,12 @@
 typedef struct s_node
 {
 	int	value;
+	int	index;
+
 	struct s_node * next;
 }	t_node;
+
+extern int	op_count;
 
 t_node	*new_node(int value);
 void	add_front(t_node **stack, t_node *new);
@@ -47,5 +51,8 @@ void	rr(t_node **a, t_node **b);
 void	print_stack(char *name, t_node *s);
 t_node	*parsing(int ac, char **av);
 float		compute_disorder(t_node *a);
+void	assign_indexes(t_node *stack);
+void	radix_sort(t_node **a, t_node **b);
+void	print_debug(t_node *s);
 
 #endif
