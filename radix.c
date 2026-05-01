@@ -6,11 +6,21 @@
 /*   By: mosimon <mosimon@learner.42.tech>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/01 11:43:29 by mosimon           #+#    #+#             */
-/*   Updated: 2026/05/01 14:06:29 by mosimon          ###   ########.fr       */
+/*   Updated: 2026/05/01 17:07:12 by morganesimonp    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swapv2.h"
 
+//first we'll index the values (sorted) so we can work with less bits to check.
+//then the idea is to check bit by bit from the rightmost. i is my index to the
+//bit we're checking. if its even (=0) we push it to b, if not we rotate in A to
+//keep the right order and check the next one. then you basically have two
+//stacks of bits 0 and 1. you push back to A, so you have stack A filled with
+//0's and 1's sorted. then you check the next bit, you repeat the operation, and
+//you finish with a sorted A. let me know if i make sense.
+//so logically radix should have a fixed number of operations, i dont think we
+//go much lower than 1084 for 100 numbers. but my ego wants to try, so lets see
+//if i can make it any better
 void	assign_indexes(t_node *stack)//function to give each nodes its sorted rank
 {
 	t_node *current;//node we're indexing
