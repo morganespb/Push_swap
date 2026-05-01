@@ -2,7 +2,7 @@ NAME= push_swap
 CC= gcc
 CFLAGS= -Wall -Wextra -Werror -g3 -fsanitize=address
 
-SRCS= main.c printer.c op_push.c op_swap.c op_rotate.c op_reverse_rotate.c parsing.c lst_helper.c disorder_metric.c radix.c
+SRCS= main.c printer.c op_push.c op_swap.c op_rotate.c op_reverse_rotate.c parsing.c lst_helper.c disorder_metric.c radix.c chunk.c
 
 OBJS= $(SRCS:.c=.o)
 

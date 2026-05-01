@@ -6,7 +6,7 @@
 /*   By: mosimon <mosimon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/29 19:48:32 by mosimon           #+#    #+#             */
-/*   Updated: 2026/04/29 22:04:32 by morganesimonp    ###   ########.fr       */
+/*   Updated: 2026/05/01 18:01:10 by morganesimonp    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,4 +102,15 @@ void	free_stack(t_node *stack)
 		free(stack);
 		stack = tmp;
 	}
+}
+
+int is_sorted(t_node *a)
+{
+	while (a && a->next)
+	{
+		if (a->value > a->next->value)
+			return (0);
+		a = a->next;
+	}
+	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: mosimon <mosimon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/29 15:14:00 by mosimon           #+#    #+#             */
-/*   Updated: 2026/05/01 14:16:18 by mosimon          ###   ########.fr       */
+/*   Updated: 2026/05/01 19:02:50 by morganesimonp    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,6 @@ t_node	*previous(t_node *stack);
 int		stack_size(t_node *stack);
 void	free_stack(t_node *stack);
 void	sa(t_node **stack);
-//ive added printing in the op_functions to test
-//some stuff but we'll need to change that obvio
 void	sb(t_node **b);
 void	ss(t_node **a, t_node **b);
 void	pa(t_node **a, t_node **b);
@@ -54,5 +52,9 @@ float		compute_disorder(t_node *a);
 void	assign_indexes(t_node *stack);
 void	radix_sort(t_node **a, t_node **b);
 void	print_debug(t_node *s);
+int		is_sorted(t_node *a);
+int		index_max(t_node *s);
+int		pos_max(t_node *s);
+void	chunk_sort(t_node **a, t_node **b);
 
 #endif

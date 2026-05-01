@@ -6,7 +6,7 @@
 /*   By: mosimon <mosimon@learner.42.tech>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/01 11:43:29 by mosimon           #+#    #+#             */
-/*   Updated: 2026/05/01 17:07:12 by morganesimonp    ###   ########.fr       */
+/*   Updated: 2026/05/01 18:16:18 by morganesimonp    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swapv2.h"
@@ -62,16 +62,18 @@ void	radix_sort(t_node **a, t_node **b)
 
 	while (i < max_bits)
 	{
+		if (is_sorted(*a))
+			break;
 		j = 0;
 		while (j < size)
 		{
 			if ((((*a)->index >> i) & 1) == 0)
 			{
-				pb(b, a);
+				pb(a, b);
 				//printf("index:%d\n", i);
-				print_stack("A", *a);
-				print_stack("B", *b);
-				printf("\n");
+				//print_stack("A", *a);
+				//print_stack("B", *b);
+				//printf("\n");
 			}
 			else
 				ra(a);
@@ -82,3 +84,5 @@ void	radix_sort(t_node **a, t_node **b)
 		i++;
 	}
 }
+
+

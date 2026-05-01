@@ -6,7 +6,7 @@
 /*   By: morganesimonprovo <morganesimonprovo@stud  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/29 15:38:43 by morganesimonp     #+#    #+#             */
-/*   Updated: 2026/05/01 14:18:53 by mosimon          ###   ########.fr       */
+/*   Updated: 2026/05/01 19:44:56 by morganesimonp    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,13 @@ static void		rotate(t_node **stack)
 
 	if (!stack || !*stack || !(*stack)->next)
 		return ;
-	first = pop_front(stack);
-	last = last_node(*stack);
-	last->next = first;
+	first = *(stack);
+	*stack = (*stack)->next;
 	first->next = NULL;
+	last = *stack;
+	while (last->next)
+		last = last->next;
+	last->next = first;
 }
 
 void	ra(t_node **a)
