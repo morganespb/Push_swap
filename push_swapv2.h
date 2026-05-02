@@ -6,7 +6,7 @@
 /*   By: mosimon <mosimon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/29 15:14:00 by mosimon           #+#    #+#             */
-/*   Updated: 2026/05/01 19:02:50 by morganesimonp    ###   ########.fr       */
+/*   Updated: 2026/05/02 05:16:28 by lcoant--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,5 +56,11 @@ int		is_sorted(t_node *a);
 int		index_max(t_node *s);
 int		pos_max(t_node *s);
 void	chunk_sort(t_node **a, t_node **b);
+void	ft_bubble_sort(t_node **a);
+void	ft_insertion_sort(t_node **a, t_node **b);
+int	where_min(t_node *a);
+int	where_max(t_node *a);
+int	min_val(t_node *a);
+int	max_val(t_node *a);
 
 #endif
