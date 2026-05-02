@@ -6,7 +6,7 @@
 /*   By: mosimon <mosimon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/29 15:14:00 by mosimon           #+#    #+#             */
-/*   Updated: 2026/05/02 11:21:28 by lcoant--         ###   ########.fr       */
+/*   Updated: 2026/05/02 13:34:13 by lcoant--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <limits.h>
 # include <unistd.h>
 # include <stdio.h>
+# include <fcntl.h>
 # include "libft/libft.h"
 
 typedef struct s_node
@@ -63,5 +64,6 @@ int	where_max(t_node *a);
 int	min_val(t_node *a);
 int	max_val(t_node *a);
 void	bucket_sort(t_node **a, t_node **b);
+void	bench(void);
 
 #endif
