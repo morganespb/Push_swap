@@ -6,7 +6,7 @@
 /*   By: mosimon <mosimon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/29 16:39:20 by mosimon           #+#    #+#             */
-/*   Updated: 2026/04/29 22:30:44 by morganesimonp    ###   ########.fr       */
+/*   Updated: 2026/05/02 12:21:14 by lcoant--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,18 +60,62 @@ static int	duplicates(t_node *a, int v)
 	return (0);
 }
 
-t_node	*parsing(int ac, char **av)
+static void	ft_is_flag(char **av, int *mode)
+{
+	if (!ft_strncmp(av[1], "--simple", 50))
+		*mode = 1;
+	else if (!ft_strncmp(av[1], "--medium", 50))
+		*mode = 2;
+	else if (!ft_strncmp(av[1], "--complex", 50))
+		*mode = 3;
+	else if (!ft_strncmp(av[1], "--adaptive", 50))
+		*mode = 4;
+	else if (!ft_strncmp(av[1], "--bensh", 50))
+	{
+		if (!ft_strncmp(av[2], "--simple", 50))
+			*mode = 6;
+		else if (!ft_strncmp(av[2], "--medium", 50))
+			*mode = 7;
+		else if (!ft_strncmp(av[2], "--complex", 50))
+			*mode = 8;
+		else if (!ft_strncmp(av[2], "--adaptive", 50))
+			*mode = 9;
+		*mode = 10;
+	}
+	else
+		*mode = 11;
+	write(2, "ERROR\n", 6);
+	printf("MODE VALUE : %d\n", (*mode));
+}
+
+static void	ft_parse_flag(int *mode, int *i)
+{
+	if ((*mode >= 1 && *mode <= 4) || *mode == 10)
+		(*i)++;
+	else if (*mode >= 6 && *mode <= 9)
+		*i = *i + 2;
+}
+
+t_node	*parsing(int ac, char **av, int *mode)
 {
 	int		i;
 	t_node	*a;
 	int		v;
 
-	i = 1;
+	i = 0;
 	a = NULL;
 	if (ac < 2)
 		return (NULL);
-	while (i < ac)
+	while (i++ < ac - 1)
 	{
+		printf("VALUE I : %d\n", i);
+		if (i == 1)
+		{
+			write(2, "ERROR\n", 6);
+			printf("MODE VALUE : %d\n", (*mode));
+			ft_is_flag(av, mode);
+			ft_parse_flag(mode, &i);
+		}
 		if (!safe_atoi(av[i], &v) || duplicates(a, v))
 		{
 			//print_error();
@@ -80,7 +124,6 @@ t_node	*parsing(int ac, char **av)
 			return (NULL);
 		}
 		add_back(&a, new_node(v));
-		i++;
 	}
 	return (a);
 }

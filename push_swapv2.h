@@ -6,7 +6,7 @@
 /*   By: mosimon <mosimon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/29 15:14:00 by mosimon           #+#    #+#             */
-/*   Updated: 2026/05/02 05:16:28 by lcoant--         ###   ########.fr       */
+/*   Updated: 2026/05/02 11:21:28 by lcoant--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	ra(t_node **a);
 void	rb(t_node **a);
 void	rr(t_node **a, t_node **b);
 void	print_stack(char *name, t_node *s);
-t_node	*parsing(int ac, char **av);
+t_node	*parsing(int ac, char **av, int *mode);
 float		compute_disorder(t_node *a);
 void	assign_indexes(t_node *stack);
 void	radix_sort(t_node **a, t_node **b);
@@ -62,5 +62,6 @@ int	where_min(t_node *a);
 int	where_max(t_node *a);
 int	min_val(t_node *a);
 int	max_val(t_node *a);
+void	bucket_sort(t_node **a, t_node **b);
 
 #endif
