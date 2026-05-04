@@ -6,7 +6,7 @@
 /*   By: lcoant-- <lcoant--@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/02 02:20:53 by lcoant--          #+#    #+#             */
-/*   Updated: 2026/05/02 10:49:38 by lcoant--         ###   ########.fr       */
+/*   Updated: 2026/05/04 12:50:16 by mosimon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,7 @@ void	ft_insertion_sort(t_node **a, t_node **b)
 	int	value;
 	int	index;
 
+	strategy = "Simple / O(n^2)";
 	i = 0;
 	size = stack_size(*a);
 	while (i++ < size - 1)

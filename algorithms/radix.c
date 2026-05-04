@@ -6,7 +6,7 @@
 /*   By: mosimon <mosimon@learner.42.tech>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/01 11:43:29 by mosimon           #+#    #+#             */
-/*   Updated: 2026/05/01 18:16:18 by morganesimonp    ###   ########.fr       */
+/*   Updated: 2026/05/04 12:50:04 by mosimon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swapv2.h"
@@ -51,6 +51,7 @@ void	radix_sort(t_node **a, t_node **b)
 	int i;//bit position
 	int j;//loop counter
 
+	strategy = "Complex / 0(n log n)";
 	size = stack_size(*a);
 	max_index = size - 1;
 	max_bits = 0;

@@ -6,16 +6,16 @@
 /*   By: mosimon <mosimon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/29 16:39:20 by mosimon           #+#    #+#             */
-/*   Updated: 2026/05/04 13:50:06 by lcoant--         ###   ########.fr       */
+/*   Updated: 2026/05/04 15:37:01 by mosimon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swapv2.h"
 
-static void	print_error(void)
+/*static void	print_error(void)
 {
 	write(2, "Error\n", 6);
-}
+}*/
 
 static int	safe_atoi(const char *str, int *out) //not sure of this, tried to make an atoi that check overlow and also returns value but testing needed
 {
@@ -87,8 +87,22 @@ static void	ft_is_flag(char **av, int *mode)
 	}
 	else
 		*mode = 11;
-	write(2, "ERROR\n", 6);
-	printf("MODE VALUE : %d\n", (*mode));
+	//write(2, "ERROR\n", 6);
+	//printf("MODE VALUE : %d\n", (*mode));
+}
+
+int	is_bench(int mode)
+{
+	return (mode >= 6);
+}
+
+int	which_strategy(int mode)
+{
+	if (mode >= 6 &&mode <= 9)
+		return (mode - 5);
+	if (mode == 10)
+		return (4);
+	return (mode);
 }
 
 static void	ft_parse_flag(int *mode, int *i)
@@ -115,10 +129,11 @@ t_node	*parsing(int ac, char **av, int *mode)
 	{
 		write(2, "ERROR\n", 6);
 		printf("VALUE I : %d\n", i);
+		//printf("VALUE I : %d\n", i);
 		if (i == 1)
 		{
-			write(2, "ERROR\n", 6);
-			printf("MODE VALUE : %d\n", (*mode));
+			//write(2, "ERROR\n", 6);
+			//printf("MODE VALUE : %d\n", (*mode));
 			ft_is_flag(av, mode);
 			ft_parse_flag(mode, &i);
 		}
@@ -127,7 +142,7 @@ t_node	*parsing(int ac, char **av, int *mode)
 			write(2, "ERROR\n", 6);
 			//print_error();
 			free_stack(a);
-			print_error();
+			//print_error();
 			return (NULL);
 		}
 		add_back(&a, new_node(v));

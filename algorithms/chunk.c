@@ -6,7 +6,7 @@
 /*   By: morganesimonprovo <morganesimonprovo@stud  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/01 18:23:53 by morganesimonp     #+#    #+#             */
-/*   Updated: 2026/05/01 19:55:50 by morganesimonp    ###   ########.fr       */
+/*   Updated: 2026/05/04 12:50:11 by mosimon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,7 @@ void	chunk_sort(t_node **a, t_node **b)
 	int pushed;
 
 	pushed = 0;
+	strategy = "Medium / O(nn)";
 	size = stack_size(*a);
 	if (size <= 100)
 		chunk_size = 15;

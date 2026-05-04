@@ -6,7 +6,7 @@
 /*   By: morganesimonprovo <morganesimonprovo@stud  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/29 12:32:40 by morganesimonp     #+#    #+#             */
-/*   Updated: 2026/05/01 14:19:29 by mosimon          ###   ########.fr       */
+/*   Updated: 2026/05/04 14:38:57 by mosimon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swapv2.h"
@@ -40,9 +40,6 @@ void	ss(t_node **a, t_node **b)
 {
 	swap_top(a);
 	swap_top(b);
+	write(1, "ss\n", 3);
 	op_count++;
 }
-
-
-
-

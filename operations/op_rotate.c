@@ -6,7 +6,7 @@
 /*   By: morganesimonprovo <morganesimonprovo@stud  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/29 15:38:43 by morganesimonp     #+#    #+#             */
-/*   Updated: 2026/05/02 00:40:52 by lcoant--         ###   ########.fr       */
+/*   Updated: 2026/05/04 11:00:48 by mosimon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	ra(t_node **a)
 void	rb(t_node **b)
 {
 	rotate(b);
-	write(1, "rb\n", 1);
+	write(1, "rb\n", 3);
 	op_count++;
 }
 
