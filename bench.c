@@ -6,13 +6,13 @@
 /*   By: lcoant-- <lcoant--@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/02 13:17:17 by lcoant--          #+#    #+#             */
-/*   Updated: 2026/05/04 13:59:45 by mosimon          ###   ########.fr       */
+/*   Updated: 2026/05/04 15:52:58 by mosimon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swapv2.h"
 
-/*void	ft_bench(void)
+void	ft_bench(void)
 {
 	int	fd = open("bench.txt", O_WRONLY);
 	ft_putstr_fd("[bench] disorder: ",fd);
@@ -42,8 +42,8 @@
 	ft_putstr_fd("rrr: ",fd);
 	ft_putstr_fd("0 \n",fd);
 	close(fd);
-}*/
-void	print_disorder(float disorder)
+}
+/*void	print_disorder(float disorder)
 {
 	int value;
 
@@ -68,4 +68,4 @@ void	print_bench(float disorder, char *strategy, int op_count)//create new struc
 	ft_putstr_fd("[bench] total_ops: ", 2);
 	ft_putnbr_fd(op_count, 2);
 	ft_putstr_fd("\n", 2);
-}
+}*/

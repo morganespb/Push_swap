@@ -6,7 +6,7 @@
 /*   By: mosimon <mosimon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/29 16:39:20 by mosimon           #+#    #+#             */
-/*   Updated: 2026/05/04 15:37:01 by mosimon          ###   ########.fr       */
+/*   Updated: 2026/05/04 15:58:48 by mosimon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,11 +87,11 @@ static void	ft_is_flag(char **av, int *mode)
 	}
 	else
 		*mode = 11;
-	//write(2, "ERROR\n", 6);
-	//printf("MODE VALUE : %d\n", (*mode));
+	write(2, "ERROR\n", 6);
+	printf("MODE VALUE : %d\n", (*mode));
 }
 
-int	is_bench(int mode)
+/*int	is_bench(int mode)
 {
 	return (mode >= 6);
 }
@@ -103,7 +103,7 @@ int	which_strategy(int mode)
 	if (mode == 10)
 		return (4);
 	return (mode);
-}
+}*/
 
 static void	ft_parse_flag(int *mode, int *i)
 {
@@ -129,11 +129,11 @@ t_node	*parsing(int ac, char **av, int *mode)
 	{
 		write(2, "ERROR\n", 6);
 		printf("VALUE I : %d\n", i);
-		//printf("VALUE I : %d\n", i);
+		printf("VALUE I : %d\n", i);
 		if (i == 1)
 		{
-			//write(2, "ERROR\n", 6);
-			//printf("MODE VALUE : %d\n", (*mode));
+			write(2, "ERROR\n", 6);
+			printf("MODE VALUE : %d\n", (*mode));
 			ft_is_flag(av, mode);
 			ft_parse_flag(mode, &i);
 		}

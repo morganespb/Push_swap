@@ -6,7 +6,7 @@
 /*   By: mosimon <mosimon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/29 19:48:32 by mosimon           #+#    #+#             */
-/*   Updated: 2026/05/04 15:36:10 by mosimon          ###   ########.fr       */
+/*   Updated: 2026/05/04 15:53:25 by mosimon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,17 @@ int	main(int ac, char **av)
 	t_node	*a;
 	t_node	*b;
 	int	mode;
-	int bench;
-	float disorder;
+	//int bench;
+	//float disorder;
 
 	mode = 4;
 	a = parsing(ac, av, &mode);
 	if (!a && ac > 1)
 		return (1);
 
-	bench = is_bench(mode);
-	mode = which_strategy(mode);
-	disorder = compute_disorder(a);
+	//bench = is_bench(mode);
+	//mode = which_strategy(mode);
+	//disorder = compute_disorder(a);
 	b = NULL;
 
 	printf("disorder: %.1f\n\n", compute_disorder(a));
@@ -78,11 +78,10 @@ int	main(int ac, char **av)
 		//adaptativ();
 		ft_bench();
 	}
-	printf("op counter: %d", op_count);
-	/*print_stack("A", a);
-	if (bench)
-		print_bench(disorder, strategy, op_count);
-	printf("op counter: %d\n", op_count);
+	//printf("op counter: %d", op_count);
+	//if (bench)
+		//print_bench(disorder, strategy, op_count);
+	/*printf("op counter: %d\n", op_count);
 	print_stack("A", a);
 	print_stack("B", b);
 	printf("\n");
