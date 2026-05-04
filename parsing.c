@@ -6,7 +6,7 @@
 /*   By: mosimon <mosimon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/29 16:39:20 by mosimon           #+#    #+#             */
-/*   Updated: 2026/05/02 12:21:14 by lcoant--         ###   ########.fr       */
+/*   Updated: 2026/05/04 13:50:06 by lcoant--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,8 +70,10 @@ static void	ft_is_flag(char **av, int *mode)
 		*mode = 3;
 	else if (!ft_strncmp(av[1], "--adaptive", 50))
 		*mode = 4;
-	else if (!ft_strncmp(av[1], "--bensh", 50))
+	else if (!ft_strncmp(av[1], "--bench", 50))
 	{
+		printf("AV : %s\n", av[2]);
+		printf("CMP : %d\n", ft_strncmp(av[2], "--complex", 50));
 		if (!ft_strncmp(av[2], "--simple", 50))
 			*mode = 6;
 		else if (!ft_strncmp(av[2], "--medium", 50))
@@ -80,7 +82,8 @@ static void	ft_is_flag(char **av, int *mode)
 			*mode = 8;
 		else if (!ft_strncmp(av[2], "--adaptive", 50))
 			*mode = 9;
-		*mode = 10;
+		else
+			*mode = 10;
 	}
 	else
 		*mode = 11;
@@ -106,8 +109,11 @@ t_node	*parsing(int ac, char **av, int *mode)
 	a = NULL;
 	if (ac < 2)
 		return (NULL);
+	printf("AV : %s\n", av[1]);
+	printf("AV : %s\n", av[2]);
 	while (i++ < ac - 1)
 	{
+		write(2, "ERROR\n", 6);
 		printf("VALUE I : %d\n", i);
 		if (i == 1)
 		{
@@ -118,6 +124,7 @@ t_node	*parsing(int ac, char **av, int *mode)
 		}
 		if (!safe_atoi(av[i], &v) || duplicates(a, v))
 		{
+			write(2, "ERROR\n", 6);
 			//print_error();
 			free_stack(a);
 			print_error();

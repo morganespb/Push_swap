@@ -6,7 +6,7 @@
 /*   By: mosimon <mosimon@learner.42.tech>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/30 12:07:44 by mosimon           #+#    #+#             */
-/*   Updated: 2026/04/30 12:47:29 by mosimon          ###   ########.fr       */
+/*   Updated: 2026/05/04 14:08:53 by lcoant--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,19 @@ float	compute_disorder(t_node *a)
 	if (total_pairs == 0)
 		return (0);
 	return (mistakes / total_pairs);
+}
+
+char	*ft_ftoa(float nb)
+{
+//	char	decimal[6];
+//	char	num_part[3];
+//	char	decimal_part[3];
+	int	num;
+	int	decimal;
+
+	num = nb;
+	printf("NUM : %d\n", num);
+	decimal = nb * 100;
+	printf("DECIMAL : %d\n", decimal);
+	return ("");
 }
