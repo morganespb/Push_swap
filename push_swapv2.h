@@ -6,7 +6,7 @@
 /*   By: mosimon <mosimon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/29 15:14:00 by mosimon           #+#    #+#             */
-/*   Updated: 2026/05/02 13:34:13 by lcoant--         ###   ########.fr       */
+/*   Updated: 2026/05/04 14:08:18 by lcoant--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ int	where_max(t_node *a);
 int	min_val(t_node *a);
 int	max_val(t_node *a);
 void	bucket_sort(t_node **a, t_node **b);
-void	bench(void);
+void	ft_bench(void);
+char	*ft_ftoa(float nb);
 
 #endif
