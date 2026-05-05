@@ -6,7 +6,7 @@
 /*   By: mosimon <morgane.simon@learner.42.tech>   #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/04/23 09:44:05 by mosimon          #+#    #+#              */
-/*   Updated: 2026/04/23 09:57:39 by mosimon          ###   ########.fr       */
+/*   Updated: 2026/05/04 21:53:47 by lcoant--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -15,10 +15,10 @@ static int	ft_len(int n)
 {
 	int	len;
 
-	len = 1;
+	len = 0;
 	if (n <= 0)
 		len++;
-	while (n / 10)
+	while (n != 0)
 	{
 		n /= 10;
 		len++;

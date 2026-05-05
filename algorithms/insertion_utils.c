@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   insertion_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lcoant-- <lcoant--@learner.42.tech>        +#+  +:+       +#+        */
+/*   By: lcoant-- <lcoant--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/02 05:05:16 by lcoant--          #+#    #+#             */
-/*   Updated: 2026/05/02 10:09:57 by lcoant--         ###   ########.fr       */
+/*   Updated: 2026/05/05 02:21:27 by lcoant--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,9 @@ int	min_val(t_node *a)
 
 int	where_min(t_node *a)
 {
-	int	index;
-	int	min_index;
-	int	min;
+	int		index;
+	int		min_index;
+	int		min;
 	t_node	*element;
 
 	index = 0;
@@ -66,9 +66,9 @@ int	where_min(t_node *a)
 
 int	where_max(t_node *a)
 {
-	int	index;
-	int	max_index;
-	int	max;
+	int		index;
+	int		max_index;
+	int		max;
 	t_node	*element;
 
 	index = 0;

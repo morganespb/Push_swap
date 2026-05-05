@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   op_rotate.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: morganesimonprovo <morganesimonprovo@stud  +#+  +:+       +#+        */
+/*   By: lcoant-- <lcoant--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/29 15:38:43 by morganesimonp     #+#    #+#             */
-/*   Updated: 2026/05/04 11:00:48 by mosimon          ###   ########.fr       */
+/*   Created: 2026/04/29 15:38:43 by morganesimo       #+#    #+#             */
+/*   Updated: 2026/05/05 02:24:28 by lcoant--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swapv2.h"
 
-static void		rotate(t_node **stack)
+static void	rotate(t_node **stack)
 {
-	t_node *first;
-	t_node *last;
+	t_node	*first;
+	t_node	*last;
 
 	if (!stack || !*stack || !(*stack)->next)
 		return ;
@@ -28,24 +28,30 @@ static void		rotate(t_node **stack)
 	last->next = first;
 }
 
-void	ra(t_node **a)
+void	ra(t_node **a, int write_on)
 {
 	rotate(a);
-	write(1, "ra\n", 3);
-	op_count++;
+	if (write_on)
+		write(2, "ra\n", 3);
+	g_stats.op_count++;
+	g_stats.ra_count++;
 }
 
-void	rb(t_node **b)
+void	rb(t_node **b, int write_on)
 {
 	rotate(b);
-	write(1, "rb\n", 3);
-	op_count++;
+	if (write_on)
+		write(2, "rb\n", 3);
+	g_stats.op_count++;
+	g_stats.rb_count++;
 }
 
-void	rr(t_node **a, t_node **b)
+void	rr(t_node **a, t_node **b, int write_on)
 {
 	rotate(a);
 	rotate(b);
-	write(1, "rr\n", 3);
-	op_count++;
+	if (write_on)
+		write(2, "rr\n", 3);
+	g_stats.op_count++;
+	g_stats.rr_count++;
 }

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                       :::      ::::::::    */
+/*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
-/*                                                   +:+ +:+         +:+      */
-/*   By: mosimon <morgane.simon@learner.42.tech>   #+#  +:+       +#+         */
-/*                                               +#+#+#+#+#+   +#+            */
-/*   Created: 2026/04/11 08:52:55 by mosimon          #+#    #+#              */
-/*   Updated: 2026/04/29 21:13:32 by morganesimonp    ###   ########.fr       */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lcoant-- <lcoant--@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/04/11 08:52:55 by mosimon           #+#    #+#             */
+/*   Updated: 2026/05/05 01:18:44 by lcoant--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ int		ft_toupper(int c);
 char	*ft_strdup(const char *s1);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
+void	ft_putstr_fd_free(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 t_list	*ft_lstnew(void *content);
@@ -70,7 +71,7 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 int		ft_printf(const char *format, ...);
 int		ft_print_char(char c);
-int		ft_print_hex(unsigned long long, int uppercase);
+int		ft_print_hex(unsigned long long n, int uppercase);
 int		ft_print_nbr(int n);
 int		ft_print_ptr(void *ptr);
 int		ft_print_str(char *s);

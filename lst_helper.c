@@ -3,72 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   lst_helper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mosimon <mosimon@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lcoant-- <lcoant--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/29 19:48:32 by mosimon           #+#    #+#             */
-/*   Updated: 2026/05/01 18:01:10 by morganesimonp    ###   ########.fr       */
+/*   Updated: 2026/05/05 00:54:57 by lcoant--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swapv2.h"
-
-t_node	*new_node(int value)
-{
-	t_node	*n;
-
-	n = malloc(sizeof(t_node));
-	if (!n)
-		return (NULL);
-	n->value = value;
-	n->next = NULL;
-	return (n);
-}
-
-void	add_front(t_node **stack, t_node *new)
-{
-	if (!new)
-		return ;
-	new->next = *stack;
-	*stack = new;
-}
-
-void	add_back(t_node **stack, t_node *new)
-{
-	t_node	*tmp;
-
-	if (!new)
-		return ;
-	if (!*stack)
-	{
-		*stack = new;
-		return ;
-	}
-	tmp = *stack;
-	while (tmp->next)
-		tmp = tmp->next;
-	tmp->next = new;
-}
-
-t_node	*pop_front(t_node **stack)
-{
-	t_node	*tmp;
-
-	if (!*stack)
-		return (NULL);
-	tmp = *stack;
-	*stack = (*stack)->next;
-	tmp->next = NULL;
-	return (tmp);
-}
-
-t_node	*last_node(t_node *stack)
-{
-	if (!stack)
-		return (NULL);
-	while (stack->next)
-		stack = stack->next;
-	return (stack);
-}
 
 t_node	*previous(t_node *stack)
 {
@@ -99,12 +41,14 @@ void	free_stack(t_node *stack)
 	while (stack)
 	{
 		tmp = stack->next;
+		stack->index = 0;
+		stack->value = 0;
 		free(stack);
 		stack = tmp;
 	}
 }
 
-int is_sorted(t_node *a)
+int	is_sorted(t_node *a)
 {
 	while (a && a->next)
 	{

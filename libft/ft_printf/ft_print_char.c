@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_char.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <student.42.fr>                     +#+  +:+       +#+        */
+/*   By: lcoant-- <lcoant--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026-04-12 16:55:46 by marvin            #+#    #+#             */
-/*   Updated: 2026/04/29 20:59:52 by morganesimonp    ###   ########.fr       */
+/*   Created: 2026/04/12 16:55:46 by marvin            #+#    #+#             */
+/*   Updated: 2026/05/05 01:16:29 by lcoant--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
-int ft_print_char(char c)
+int	ft_print_char(char c)
 {
-    write(1, &c, 1);
-    return (1);
+	write(1, &c, 1);
+	return (1);
 }

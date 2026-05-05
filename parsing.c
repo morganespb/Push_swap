@@ -3,21 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mosimon <mosimon@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lcoant-- <lcoant--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/29 16:39:20 by mosimon           #+#    #+#             */
-/*   Updated: 2026/05/04 15:58:48 by mosimon          ###   ########.fr       */
+/*   Updated: 2026/05/05 00:55:16 by lcoant--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swapv2.h"
 
-/*static void	print_error(void)
-{
-	write(2, "Error\n", 6);
-}*/
-
-static int	safe_atoi(const char *str, int *out) //not sure of this, tried to make an atoi that check overlow and also returns value but testing needed
+static int	safe_atoi(const char *str, int *out)
 {
 	long	res;
 	int		sign;
@@ -26,16 +21,12 @@ static int	safe_atoi(const char *str, int *out) //not sure of this, tried to mak
 	res = 0;
 	sign = 1;
 	i = 0;
-
 	if (str[i] == '+' || str[i] == '-')
 	{
 		if (str[i] == '-')
 			sign = -sign;
 		i++;
 	}
-
-	//if (!str[i])
-	//return (0);
 	while (str[i])
 	{
 		if (str[i] < '0' || str[i] > '9')
@@ -72,8 +63,6 @@ static void	ft_is_flag(char **av, int *mode)
 		*mode = 4;
 	else if (!ft_strncmp(av[1], "--bench", 50))
 	{
-		printf("AV : %s\n", av[2]);
-		printf("CMP : %d\n", ft_strncmp(av[2], "--complex", 50));
 		if (!ft_strncmp(av[2], "--simple", 50))
 			*mode = 6;
 		else if (!ft_strncmp(av[2], "--medium", 50))
@@ -87,23 +76,7 @@ static void	ft_is_flag(char **av, int *mode)
 	}
 	else
 		*mode = 11;
-	write(2, "ERROR\n", 6);
-	printf("MODE VALUE : %d\n", (*mode));
 }
-
-/*int	is_bench(int mode)
-{
-	return (mode >= 6);
-}
-
-int	which_strategy(int mode)
-{
-	if (mode >= 6 &&mode <= 9)
-		return (mode - 5);
-	if (mode == 10)
-		return (4);
-	return (mode);
-}*/
 
 static void	ft_parse_flag(int *mode, int *i)
 {
@@ -123,26 +96,17 @@ t_node	*parsing(int ac, char **av, int *mode)
 	a = NULL;
 	if (ac < 2)
 		return (NULL);
-	printf("AV : %s\n", av[1]);
-	printf("AV : %s\n", av[2]);
 	while (i++ < ac - 1)
 	{
-		write(2, "ERROR\n", 6);
-		printf("VALUE I : %d\n", i);
-		printf("VALUE I : %d\n", i);
 		if (i == 1)
 		{
-			write(2, "ERROR\n", 6);
-			printf("MODE VALUE : %d\n", (*mode));
 			ft_is_flag(av, mode);
 			ft_parse_flag(mode, &i);
 		}
 		if (!safe_atoi(av[i], &v) || duplicates(a, v))
 		{
-			write(2, "ERROR\n", 6);
-			//print_error();
 			free_stack(a);
-			//print_error();
+			write(2, "Error\n", 6);
 			return (NULL);
 		}
 		add_back(&a, new_node(v));

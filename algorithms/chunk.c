@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   chunk.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: morganesimonprovo <morganesimonprovo@stud  +#+  +:+       +#+        */
+/*   By: lcoant-- <lcoant--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/01 18:23:53 by morganesimonp     #+#    #+#             */
-/*   Updated: 2026/05/04 12:50:11 by mosimon          ###   ########.fr       */
+/*   Created: 2026/05/01 18:23:53 by morganesimo       #+#    #+#             */
+/*   Updated: 2026/05/05 02:21:29 by lcoant--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	index_max(t_node *s)
 {
-	int max;
+	int	max;
 
 	max = s->index;
 	while (s)
@@ -23,15 +23,18 @@ int	index_max(t_node *s)
 			max = s->index;
 		s = s->next;
 	}
-	return max;
+	return (max);
 }
 
-int pos_max(t_node *s)
+int	pos_max(t_node *s)
 {
-	int max = s->index;
-	int i = 0;
-	int max_pos = 0;
+	int	max;
+	int	i;
+	int	max_pos;
 
+	max = s->index;
+	i = 0;
+	max_pos = 0;
 	while (s)
 	{
 		if (s->index > max)
@@ -42,61 +45,57 @@ int pos_max(t_node *s)
 		s = s->next;
 		i++;
 	}
-	return max_pos;
+	return (max_pos);
 }
 
-void	push_back_max(t_node **a, t_node **b)
+void	push_back_max(t_node **a, t_node **b, int write_on)
 {
-	int pos;
-	int size_b;
+	int	pos;
+	int	size_b;
 
 	while (*b)
 	{
 		pos = pos_max(*b);
 		size_b = stack_size(*b);
-
 		if (pos <= size_b / 2)
 			while (pos-- > 0)
-				rb(b);
+				rb(b, write_on);
 		else
 			while (pos++ < size_b)
-				rrb(b);
-
-		pa(a, b);
+				rrb(b, write_on);
+		pa(a, b, write_on);
 	}
 }
 
-void	chunk_sort(t_node **a, t_node **b)
+static int	ft_get_chunk(int size)
 {
-	int size;
-	int chunk_size;
-	int pushed;
-
-	pushed = 0;
-	strategy = "Medium / O(nn)";
-	size = stack_size(*a);
 	if (size <= 100)
-		chunk_size = 15;
+		return (15);
 	else
-		chunk_size = 40;
+		return (40);
+}
 
+void	chunk_sort(t_node **a, t_node **b, int write_on)
+{
+	int (size) = stack_size(*a);
+	int (chunk_size) = ft_get_chunk(size);
+	int (pushed) = 0;
+	g_stats.strategy = "Medium / O(n√n)";
 	while (*a)
 	{
 		if ((*a)->index <= pushed)
 		{
-			pb(a, b);
-			rb(b);
+			pb(a, b, write_on);
+			rb(b, write_on);
 			pushed++;
 		}
-
 		else if ((*a)->index <= pushed + chunk_size)
 		{
-			pb(a, b);
+			pb(a, b, write_on);
 			pushed++;
 		}
 		else
-			ra(a);
+			ra(a, write_on);
 	}
-	push_back_max(a, b);
-
+	push_back_max(a, b, write_on);
 }

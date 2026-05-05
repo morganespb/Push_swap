@@ -3,49 +3,58 @@
 /*                                                        :::      ::::::::   */
 /*   bench.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lcoant-- <lcoant--@learner.42.tech>        +#+  +:+       +#+        */
+/*   By: lcoant-- <lcoant--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/02 13:17:17 by lcoant--          #+#    #+#             */
-/*   Updated: 2026/05/04 15:52:58 by mosimon          ###   ########.fr       */
+/*   Updated: 2026/05/05 01:27:01 by lcoant--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swapv2.h"
 
-void	ft_bench(void)
+void	ft_bench(float disorder)
 {
-	int	fd = open("bench.txt", O_WRONLY);
-	ft_putstr_fd("[bench] disorder: ",fd);
-	ft_putstr_fd("40.00%\n",fd); //place holder
-	ft_putstr_fd("[bench] strategy: ",fd);
-	ft_putstr_fd("Simple / O(n^2)\n",fd);
-	ft_putstr_fd("[bench] total_ops: ",fd);
-	ft_putstr_fd("231\n",fd);
-	ft_putstr_fd("[bench] sa: ",fd);
-	ft_putstr_fd("0 ",fd);
-	ft_putstr_fd("ss:  ",fd);
-	ft_putstr_fd("0 ",fd);
-	ft_putstr_fd("pa: ",fd);
-	ft_putstr_fd("0 ",fd);
-	ft_putstr_fd("pb: ",fd);
-	ft_putstr_fd("0 \n",fd);
-	ft_putstr_fd("[bench] ra: ",fd);
-	ft_putstr_fd("0 ",fd);
-	ft_putstr_fd("rb: ",fd);
-	ft_putstr_fd("0 ",fd);
-	ft_putstr_fd("rr: ",fd);
-	ft_putstr_fd("0 ",fd);
-	ft_putstr_fd("rra: ",fd);
-	ft_putstr_fd("0 ",fd);
-	ft_putstr_fd("rrb: ",fd);
-	ft_putstr_fd("0 ",fd);
-	ft_putstr_fd("rrr: ",fd);
-	ft_putstr_fd("0 \n",fd);
-	close(fd);
+	ft_putstr_fd("[bench] disorder: ", 2);
+	print_disorder(disorder);
+	ft_putstr_fd("[bench] strategy: ", 2);
+	ft_putstr_fd(g_stats.strategy, 2);
+	ft_putstr_fd("\n[bench] total_ops: ", 2);
+	ft_putstr_fd_free(ft_itoa(g_stats.op_count), 2);
+	ft_putstr_fd("\n", 2);
+	ft_display_stats();
 }
-/*void	print_disorder(float disorder)
+
+void	ft_display_stats(void)
 {
-	int value;
+	ft_putstr_fd("[bench] sa: ", 2);
+	ft_putstr_fd_free(ft_itoa(g_stats.sa_count), 2);
+	ft_putstr_fd(" sb: ", 2);
+	ft_putstr_fd_free(ft_itoa(g_stats.sb_count), 2);
+	ft_putstr_fd(" ss: ", 2);
+	ft_putstr_fd_free(ft_itoa(g_stats.ss_count), 2);
+	ft_putstr_fd(" pa: ", 2);
+	ft_putstr_fd_free(ft_itoa(g_stats.pa_count), 2);
+	ft_putstr_fd(" pb: ", 2);
+	ft_putstr_fd_free(ft_itoa(g_stats.pb_count), 2);
+	ft_putstr_fd("\n", 2);
+	ft_putstr_fd("[bench] ra: ", 2);
+	ft_putstr_fd_free(ft_itoa(g_stats.ra_count), 2);
+	ft_putstr_fd(" rb: ", 2);
+	ft_putstr_fd_free(ft_itoa(g_stats.rb_count), 2);
+	ft_putstr_fd(" rr: ", 2);
+	ft_putstr_fd_free(ft_itoa(g_stats.rr_count), 2);
+	ft_putstr_fd(" rra: ", 2);
+	ft_putstr_fd_free(ft_itoa(g_stats.rra_count), 2);
+	ft_putstr_fd(" rrb: ", 2);
+	ft_putstr_fd_free(ft_itoa(g_stats.rrb_count), 2);
+	ft_putstr_fd(" rrr: ", 2);
+	ft_putstr_fd_free(ft_itoa(g_stats.rrr_count), 2);
+	ft_putstr_fd("\n", 2);
+}
+
+void	print_disorder(float disorder)
+{
+	int	value;
 
 	value = (int)(disorder * 10000);
 	ft_putnbr_fd(value / 100, 2);
@@ -55,17 +64,3 @@ void	ft_bench(void)
 	ft_putnbr_fd(value % 100, 2);
 	ft_putstr_fd("%\n", 2);
 }
-
-void	print_bench(float disorder, char *strategy, int op_count)//create new struct to count op?
-{
-	ft_putstr_fd("[bench] disorder: ", 2);
-	print_disorder(disorder);
-
-	ft_putstr_fd("[bench] strategy: ", 2);
-	ft_putstr_fd(strategy, 2);
-	ft_putstr_fd("\n", 2);
-
-	ft_putstr_fd("[bench] total_ops: ", 2);
-	ft_putnbr_fd(op_count, 2);
-	ft_putstr_fd("\n", 2);
-}*/
