@@ -6,7 +6,7 @@
 /*   By: lcoant-- <lcoant--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/01 11:43:29 by mosimon           #+#    #+#             */
-/*   Updated: 2026/05/05 02:24:25 by lcoant--         ###   ########.fr       */
+/*   Updated: 2026/05/05 14:09:43 by mosimon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,8 @@ void	radix_sort(t_node **a, t_node **b, int write_on)
 	g_stats.strategy = "Complex / O(n log n)";
 	while ((max_index >> max_bits) != 0)
 		max_bits++;
-	while (i++ < max_bits)
+	while (i < max_bits)
 	{
-		if (is_sorted(*a))
-			break ;
 		j = 0;
 		while (j < size)
 		{
@@ -59,5 +57,6 @@ void	radix_sort(t_node **a, t_node **b, int write_on)
 		}
 		while (*b)
 			pa(a, b, write_on);
+		i++;
 	}
 }

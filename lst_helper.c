@@ -6,7 +6,7 @@
 /*   By: lcoant-- <lcoant--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/29 19:48:32 by mosimon           #+#    #+#             */
-/*   Updated: 2026/05/05 00:54:57 by lcoant--         ###   ########.fr       */
+/*   Updated: 2026/05/05 14:21:03 by mosimon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,13 +48,16 @@ void	free_stack(t_node *stack)
 	}
 }
 
-int	is_sorted(t_node *a)
+int	add_value(t_node **a, char *str)
 {
-	while (a && a->next)
-	{
-		if (a->value > a->next->value)
-			return (0);
-		a = a->next;
-	}
+	t_node	*new;
+	int		v;
+
+	if (!safe_atoi(str, &v) || duplicates(*a, v))
+		return (0);
+	new = new_node(v);
+	if (!new)
+		return (0);
+	add_back(a, new);
 	return (1);
 }

@@ -6,27 +6,25 @@
 /*   By: lcoant-- <lcoant--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/29 16:39:20 by mosimon           #+#    #+#             */
-/*   Updated: 2026/05/05 00:55:16 by lcoant--         ###   ########.fr       */
+/*   Updated: 2026/05/05 14:16:18 by mosimon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swapv2.h"
 
-static int	safe_atoi(const char *str, int *out)
+int	safe_atoi(const char *str, int *out)
 {
-	long	res;
-	int		sign;
-	int		i;
-
-	res = 0;
-	sign = 1;
-	i = 0;
+	long (res) = 0;
+	int (sign) = 1;
+	int (i) = 0;
 	if (str[i] == '+' || str[i] == '-')
 	{
 		if (str[i] == '-')
 			sign = -sign;
 		i++;
 	}
+	if (!str[i])
+		return (0);
 	while (str[i])
 	{
 		if (str[i] < '0' || str[i] > '9')
@@ -40,7 +38,7 @@ static int	safe_atoi(const char *str, int *out)
 	return (1);
 }
 
-static int	duplicates(t_node *a, int v)
+int	duplicates(t_node *a, int v)
 {
 	while (a)
 	{
@@ -88,12 +86,8 @@ static void	ft_parse_flag(int *mode, int *i)
 
 t_node	*parsing(int ac, char **av, int *mode)
 {
-	int		i;
-	t_node	*a;
-	int		v;
-
-	i = 0;
-	a = NULL;
+	int (i) = 0;
+	t_node (*a) = NULL;
 	if (ac < 2)
 		return (NULL);
 	while (i++ < ac - 1)
@@ -103,13 +97,12 @@ t_node	*parsing(int ac, char **av, int *mode)
 			ft_is_flag(av, mode);
 			ft_parse_flag(mode, &i);
 		}
-		if (!safe_atoi(av[i], &v) || duplicates(a, v))
+		if (!add_value(&a, av[i]))
 		{
 			free_stack(a);
 			write(2, "Error\n", 6);
 			return (NULL);
 		}
-		add_back(&a, new_node(v));
 	}
 	return (a);
 }

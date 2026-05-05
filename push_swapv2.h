@@ -6,7 +6,7 @@
 /*   By: lcoant-- <lcoant--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/29 15:14:00 by mosimon           #+#    #+#             */
-/*   Updated: 2026/05/05 02:28:12 by lcoant--         ###   ########.fr       */
+/*   Updated: 2026/05/05 14:21:54 by mosimon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,14 +81,18 @@ int					min_val(t_node *a);
 int					max_val(t_node *a);
 void				ft_bench(float disorder);
 void				print_disorder(float disorder);
-void				ft_bench_mode(int mode, t_node *a, t_node *b,
+void				ft_bench_mode(int mode, t_node **a, t_node **b,
 						float disorder);
-void				ft_normal_mode(int mode, t_node *a, t_node *b,
+void				ft_normal_mode(int mode, t_node **a, t_node **b,
 						float disorder);
-void				ft_chose_mode(int mode, t_node *a, t_node *b,
+void				ft_chose_mode(int mode, t_node **a, t_node **b,
 						float disorder);
 void				ft_set_stats(void);
 void				ft_display_stats(void);
-void				ft_adaptativ(t_node *a, t_node *b, float disorder, int write_on);
+void				ft_adaptativ(t_node **a, t_node **b, float disorder,
+						int write_on);
+int					add_value(t_node **a, char *str);
+int					safe_atoi(const char *str, int *out);
+int					duplicates(t_node *a, int v);
 
 #endif

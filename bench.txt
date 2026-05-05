@@ -1,28 +1,5 @@
-[bench] disorder: 50.00%
-[bench] strategy: Complex / O(n log n)
-[bench] total_ops: 14
-[bench] sa: 0 sb: 0 ss: 0 pa: 6 pb: 6
-[bench] ra: 2 rb: 0 rr: 0 rra: 0 rrb: 0 rrr: 0
-
-=================================================================
-==775180==ERROR: LeakSanitizer: detected memory leaks
-
-Direct leak of 16 byte(s) in 1 object(s) allocated from:
-    #0 0x7f02676e6f2b in malloc (/lib64/libasan.so.8+0xe6f2b) (BuildId: d3cb6206dff19da52969c009f4cd93611901c478)
-    #1 0x0000004046a2 in new_node /home/lcoant--/Documents/Push_Swap/2/lst_helper2.c:19
-    #2 0x000000402737 in parsing /home/lcoant--/Documents/Push_Swap/2/parsing.c:112
-    #3 0x0000004005d0 in main /home/lcoant--/Documents/Push_Swap/2/main.c:25
-    #4 0x7f0267412574 in __libc_start_call_main (/lib64/libc.so.6+0x3574) (BuildId: 92b5376d35bb29c098175948cf3e7cbcae3aeae1)
-    #5 0x7f0267412627 in __libc_start_main@GLIBC_2.2.5 (/lib64/libc.so.6+0x3627) (BuildId: 92b5376d35bb29c098175948cf3e7cbcae3aeae1)
-    #6 0x000000400474 in _start (/home/lcoant--/Documents/Push_Swap/2/push_swap+0x400474) (BuildId: 5c1acd728ea5415433cb3713d4e212f4d6d82fc1)
-
-Indirect leak of 16 byte(s) in 1 object(s) allocated from:
-    #0 0x7f02676e6f2b in malloc (/lib64/libasan.so.8+0xe6f2b) (BuildId: d3cb6206dff19da52969c009f4cd93611901c478)
-    #1 0x0000004046a2 in new_node /home/lcoant--/Documents/Push_Swap/2/lst_helper2.c:19
-    #2 0x000000402737 in parsing /home/lcoant--/Documents/Push_Swap/2/parsing.c:112
-    #3 0x0000004005d0 in main /home/lcoant--/Documents/Push_Swap/2/main.c:25
-    #4 0x7f0267412574 in __libc_start_call_main (/lib64/libc.so.6+0x3574) (BuildId: 92b5376d35bb29c098175948cf3e7cbcae3aeae1)
-    #5 0x7f0267412627 in __libc_start_main@GLIBC_2.2.5 (/lib64/libc.so.6+0x3627) (BuildId: 92b5376d35bb29c098175948cf3e7cbcae3aeae1)
-    #6 0x000000400474 in _start (/home/lcoant--/Documents/Push_Swap/2/push_swap+0x400474) (BuildId: 5c1acd728ea5415433cb3713d4e212f4d6d82fc1)
-
-SUMMARY: AddressSanitizer: 32 byte(s) leaked in 2 allocation(s).
+[bench] disorder: 51.14%
+[bench] strategy: Simple / O(n^2)
+[bench] total_ops: 32294
+[bench] sa: 0 sb: 0 ss: 0 pa: 499 pb: 499
+[bench] ra: 15213 rb: 0 rr: 0 rra: 16083 rrb: 0 rrr: 0
