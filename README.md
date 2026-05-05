@@ -1,44 +1,60 @@
+*This activity has been created as part of the 42 curriculum by mosimon, lcoant--*
 
+# Push_Swap
 
-DATA STRUCTRURE:
-- create linked list
-- stack size
-- add node
-- free stack
-- print stack
+## Description
+The goal of this activity was to use a set of operation to sort a given stack with as less operations as possible.
+The algorithms were of :
+- O(n^2)
+- O(n√n)
+- O(n log n)
+And the operations were :
+- sa
+- sb
+- ss
+- pa
+- pb
+- ra
+- rb
+- rr
+- rra
+- rrb
+- rrr
+And we had to handle 5 kind of flag :
+- --simple
+    Which trigered the O(n^2) algorithm
+- --medium
+    Which trigered the O(n√n) algorithm
+- --complex
+    Which trigered the O(n log n) algorithm
+- --adaptive
+    Which trigered an algorithm depending on the disorder value of the given stack
+- --bench
+    Which trigered the benchmark mode to display info on the operations
 
+## Instructions
+    To compile our project you can use the make command
+Then you just have to use the "push_swap" executable with a stack and/or some flags
 
-PARSING
-- check valid input: non numbers, duplicates, INTMIN INTMAX, empty input, display error/n
-  stderr
+## Resources
+    As resources we used :
+- StackOverflow
+- Reddit
+- Google
+- Algorithms visualisation website
+- Youtube tutorial
 
-BASIC STACK OPERATIONS
-sa sb ss papb ra rb rr rra rrb rrr
+    For the IA use :
+- I use IA to find usefull resources such as visualisation website and divers youtube videos
 
-OUTPUT
-- modify stack
-- print operation name
-- count operations (bench)
-
-SIMPLE ALGO
-- min/max extraction ?
-
-MEDIUM ALGO
-- chunk based algo ?
-- Turk algo ?
-1) push all from A to B except 3 elements
-2) sort A // A = small sorted base , B = everything else
-3) reeinsertion: compute for each B element targer position in A
-4) cost to move in B? cost to prepare A?
-5) choose cheapest movement
-6) execute move
-
-COMPLEX ALGO
-- radix ?
-1) replace values by index
-2) pass 1) even ? send to stack b(pb) , odd ? rotate in a(ra)
-3) pass 2) digit % 2 == 0 ? pb, else ra
-4) pass 3) digit % 4 == 0 ? pb, else ra
-
-ADAPTIVE
-- Disorder based selector. low disorder < 0.2, medium 0.2 - 0.5, high >= 0.5
+## The Algorithms that we used
+### O(n^2)
+    - Insertion_sort
+The insertion sort is the most optimised algorithms for this kind of operations, it's pretty staigth forward and can be combined with a bucket_sort
+Moreover it can be optimised to have way better performance than a bubble sort that we also tried to use !
+### O(n√n)
+    - Chunk_sort
+### O(n log n)
+    - Radix_sort
+### Parsing algorithm
+We also used a parsing algorithm to handle flag and to populate our stack !
