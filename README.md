@@ -7,8 +7,8 @@ The goal of this activity was to use a set of operation to sort a given stack wi
 The algorithms were of :
 - O(n^2)
 - O(n√n)
-- O(n log n)
-And the operations were :
+- O(n log n)<br><br>
+#### And the operations were :
 - sa
 - sb
 - ss
@@ -19,18 +19,18 @@ And the operations were :
 - rr
 - rra
 - rrb
-- rrr
-And we had to handle 5 kind of flag :
-- --simple
-    Which trigered the O(n^2) algorithm
-- --medium
-    Which trigered the O(n√n) algorithm
-- --complex
-    Which trigered the O(n log n) algorithm
-- --adaptive
-    Which trigered an algorithm depending on the disorder value of the given stack
-- --bench
-    Which trigered the benchmark mode to display info on the operations
+- rrr<br><br>
+#### And we had to handle 5 kind of flag :
+- --simple<br>
+  Which trigered the O(n^2) algorithm
+- --medium<br>
+  Which trigered the O(n√n) algorithm
+- --complex<br>
+  Which trigered the O(n log n) algorithm
+- --adaptive<br>
+  Which trigered an algorithm depending on the disorder value of the given stack
+- --bench<br>
+  Which trigered the benchmark mode to display info on the operations
 
 ## Instructions
 To compile our project you can use the make command
