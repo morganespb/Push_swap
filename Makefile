@@ -1,6 +1,6 @@
 NAME= push_swap
 CC= gcc
-CFLAGS= -Wall -Wextra -Werror -g3 -fsanitize=address
+CFLAGS= -Wall -Wextra -Werror
 
 SRCS= 	main.c operations/op_push.c operations/op_swap.c \
 	operations/op_rotate.c operations/op_reverse_rotate.c parsing.c \
